@@ -1,6 +1,6 @@
 <resources xmlns:tools="http://schemas.android.com/tools">
     <!-- Base application theme. -->
-    <style name="Theme.Pedotan" parent="Theme.Material3.Dark.NoActionBar">
+    <style name="Theme.Pedotan" parent="Theme.Material3.Dark">
         <!-- Primary brand color for dark theme. -->
         <item name="colorPrimary">@color/green_100</item>
         <item name="colorPrimaryVariant">@color/green_200</item>
@@ -14,5 +14,11 @@
         <!-- Status bar color for dark theme. -->
         <item name="android:statusBarColor">?attr/colorSecondaryVariant</item>
         <!-- Customize your theme here. -->
+        <item name="actionBarStyle">@style/AppTheme.ActionBar</item>
     </style>
+
+    <style name="AppTheme.ActionBar" parent="Widget.AppCompat.Light.ActionBar">
+        <item name="background">@color/green_400</item>
+    </style>
+
 </resources>

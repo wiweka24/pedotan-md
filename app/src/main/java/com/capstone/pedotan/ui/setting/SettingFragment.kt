@@ -14,12 +14,16 @@ import com.capstone.pedotan.R
 import com.capstone.pedotan.databinding.FragmentSettingBinding
 import com.capstone.pedotan.ui.ViewModelFactory
 import com.capstone.pedotan.ui.login.LoginActivity
+import com.google.firebase.auth.FirebaseAuth
+import com.google.firebase.auth.ktx.auth
+import com.google.firebase.ktx.Firebase
 
 class SettingFragment : Fragment() {
 
     private lateinit var viewModel: SettingViewModel
     private var _binding: FragmentSettingBinding? = null
     private val binding get() = _binding!!
+    private lateinit var auth: FirebaseAuth
 
     override fun onCreateView(
         inflater: LayoutInflater,
@@ -32,6 +36,8 @@ class SettingFragment : Fragment() {
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
+
+        auth = Firebase.auth
 
         setupViewModel()
         setupAction()
@@ -95,6 +101,7 @@ class SettingFragment : Fragment() {
                 setTitle("Logout")
                 setMessage("Apakah Anda Yakin Ingin Keluar?")
                 setPositiveButton("Ya") { _, _ ->
+                    auth.signOut()
                     viewModel.removeSession()
                     val intent = Intent(context, LoginActivity::class.java)
                     intent.flags =
