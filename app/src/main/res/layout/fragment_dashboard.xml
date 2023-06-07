@@ -94,7 +94,7 @@
         app:layout_constraintTop_toBottomOf="@+id/heal_crop">
 
         <com.google.android.material.button.MaterialButton
-            android:id="@+id/fab_camera"
+            android:id="@+id/btn_camera"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_margin="16dp"

@@ -28,5 +28,4 @@
         android:name="com.capstone.pedotan.ui.setting.SettingFragment"
         android:label="@string/title_setting"
         tools:layout="@layout/fragment_setting" />
-
 </navigation>

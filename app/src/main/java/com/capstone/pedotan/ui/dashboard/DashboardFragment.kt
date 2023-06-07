@@ -50,7 +50,7 @@ class DashboardFragment : Fragment() {
             startActivity(Intent(requireActivity(), LiveCameraActivity::class.java))
         }
 
-        binding.fabCamera.setOnClickListener {
+        binding.btnCamera.setOnClickListener {
             startActivity(Intent(requireActivity(), CameraActivity::class.java))
         }
     }
