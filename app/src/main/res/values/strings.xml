@@ -3,8 +3,8 @@
     <string name="title_home">Home</string>
     <string name="title_dashboard">Beranda</string>
     <string name="title_notifications">Notifications</string>
-    <string name="title_profile">Profile</string>
-    <string name="title_history">History</string>
+    <string name="title_profile">Data Diri</string>
+    <string name="title_market">Pasar</string>
     <string name="title_setting">Setting</string>
     <string name="title_scan">Scan</string>
     <string name="change_theme">Dark Mode</string>
@@ -54,4 +54,6 @@
     <string name="menu_gallery">Gallery</string>
     <string name="menu_slideshow">Slideshow</string>
     <string name="title_activity_home">HomeActivity</string>
+    <string name="title_loan">Pinjaman</string>
+    <string name="title_contract">Kontrak</string>
 </resources>

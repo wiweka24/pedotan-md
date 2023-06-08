@@ -1,5 +1,6 @@
 package com.capstone.pedotan.ui.register
 
+import android.util.Log
 import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
@@ -19,9 +20,9 @@ class RegisterActivityViewModel (private val repository: SettingsRepository) : V
         client.enqueue(object : Callback<RegisterResponse> {
             override fun onResponse(call: Call<RegisterResponse>, response: Response<RegisterResponse>) {
                 if (response.isSuccessful) {
-                    val responseBody = response.body()?.data
+                    val responseBody = response.body()
                     if (responseBody != null) {
-//                        Log.d("message", responseBody.accessToken)
+                        Log.d("message", responseBody.message)
 //                        showToast(response.)
                         registerLiveData.value = true
                         return

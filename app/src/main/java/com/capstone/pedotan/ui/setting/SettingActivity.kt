@@ -1,56 +1,37 @@
 package com.capstone.pedotan.ui.setting
 
 import android.content.Intent
-import androidx.lifecycle.ViewModelProvider
+import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
-import androidx.fragment.app.Fragment
-import android.view.LayoutInflater
-import android.view.View
-import android.view.ViewGroup
-import androidx.activity.OnBackPressedCallback
 import androidx.appcompat.app.AlertDialog
 import androidx.appcompat.app.AppCompatDelegate
+import androidx.lifecycle.ViewModelProvider
 import com.capstone.pedotan.R
-import com.capstone.pedotan.databinding.FragmentSettingBinding
+import com.capstone.pedotan.databinding.ActivitySettingBinding
 import com.capstone.pedotan.ui.ViewModelFactory
 import com.capstone.pedotan.ui.login.LoginActivity
 import com.google.firebase.auth.FirebaseAuth
 import com.google.firebase.auth.ktx.auth
 import com.google.firebase.ktx.Firebase
 
-class SettingFragment : Fragment() {
-
+class SettingActivity : AppCompatActivity() {
+    private lateinit var binding: ActivitySettingBinding
     private lateinit var viewModel: SettingViewModel
-    private var _binding: FragmentSettingBinding? = null
-    private val binding get() = _binding!!
     private lateinit var auth: FirebaseAuth
 
-    override fun onCreateView(
-        inflater: LayoutInflater,
-        container: ViewGroup?,
-        savedInstanceState: Bundle?
-    ): View? {
-        _binding = FragmentSettingBinding.inflate(inflater, container, false)
-        return binding.root
-    }
-
-    override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
-        super.onViewCreated(view, savedInstanceState)
+    override fun onCreate(savedInstanceState: Bundle?) {
+        super.onCreate(savedInstanceState)
+        binding = ActivitySettingBinding.inflate(layoutInflater)
+        setContentView(binding.root)
 
         auth = Firebase.auth
 
         setupViewModel()
         setupAction()
-        onBackPressed()
-    }
-
-    override fun onDestroyView() {
-        super.onDestroyView()
-        _binding = null
     }
 
     private fun setupViewModel() {
-        viewModel = ViewModelProvider(this, ViewModelFactory(requireActivity()))[SettingViewModel::class.java]
+        viewModel = ViewModelProvider(this, ViewModelFactory(this))[SettingViewModel::class.java]
     }
 
     private fun setupAction() {
@@ -68,7 +49,7 @@ class SettingFragment : Fragment() {
         }
 
         binding.linearLayoutTheme.setOnClickListener {
-            val builder = AlertDialog.Builder(requireContext())
+            val builder = AlertDialog.Builder(this)
             builder.setTitle(getString(R.string.change_theme))
             val styles = arrayOf("On","Off","System default")
             val checkedItem = settings.isDarkMode
@@ -97,7 +78,7 @@ class SettingFragment : Fragment() {
         }
 
         binding.linearLayoutLogout.setOnClickListener {
-            AlertDialog.Builder(requireActivity()).apply {
+            AlertDialog.Builder(this).apply {
                 setTitle("Logout")
                 setMessage("Apakah Anda Yakin Ingin Keluar?")
                 setPositiveButton("Ya") { _, _ ->
@@ -107,19 +88,11 @@ class SettingFragment : Fragment() {
                     intent.flags =
                         Intent.FLAG_ACTIVITY_CLEAR_TASK or Intent.FLAG_ACTIVITY_NEW_TASK
                     startActivity(intent)
-                    requireActivity().finish()
+                    finish()
                 }
                 create()
                 show()
             }
         }
-    }
-
-    private fun onBackPressed() {
-        requireActivity().onBackPressedDispatcher.addCallback(viewLifecycleOwner, object : OnBackPressedCallback(true) {
-            override fun handleOnBackPressed() {
-                requireActivity().finish()
-            }
-        })
     }
 }

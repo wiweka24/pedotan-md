@@ -13,12 +13,12 @@ class SettingsRepository(context: Context)  {
         editor.apply()
     }
 
-    fun setLogin(state: Boolean, token: String, refToken: String, id: String) {
+    fun setLogin(state: Boolean, token: String) {
         val editor = preferences.edit()
         editor.putBoolean(STATE_LOGIN, state)
         editor.putString(TOKEN, token)
-        editor.putString(REF_TOKEN, refToken)
-        editor.putString(USER_ID, id)
+//        editor.putString(REF_TOKEN, refToken)
+//        editor.putString(USER_ID, id)
         editor.apply()
     }
 
@@ -27,17 +27,17 @@ class SettingsRepository(context: Context)  {
         model.isDarkMode = preferences.getInt(STATE_DARK_MODE, 2)
         model.isLogin = preferences.getBoolean(STATE_LOGIN, false)
         model.token = preferences.getString(TOKEN, "token").toString()
-        model.refToken = preferences.getString(REF_TOKEN, "ref_token").toString()
-        model.userID = preferences.getString(USER_ID, "user_id").toString()
+//        model.refToken = preferences.getString(REF_TOKEN, "ref_token").toString()
+//        model.userID = preferences.getString(USER_ID, "user_id").toString()
         return model
     }
 
     fun clearSession() {
         val editor = preferences.edit()
         editor.remove("login")
-        editor.remove("user_id")
         editor.remove("token")
-        editor.remove("ref_token")
+//        editor.remove("user_id")
+//        editor.remove("ref_token")
         editor.apply()
     }
 
@@ -45,8 +45,8 @@ class SettingsRepository(context: Context)  {
         private const val PREFS_NAME = "settings_pref"
         private const val STATE_DARK_MODE = "dark_mode"
         private const val STATE_LOGIN = "login"
-        private const val USER_ID = "user_id"
         private const val TOKEN = "token"
-        private const val REF_TOKEN = "ref_token"
+//        private const val USER_ID = "user_id"
+//        private const val REF_TOKEN = "ref_token"
     }
 }

@@ -15,8 +15,8 @@ import retrofit2.Response
 
 class LoginActivityViewModel(private val repository: SettingsRepository) : ViewModel() {
 
-    fun saveSession(token: String, refToken: String, id: String) {
-        repository.setLogin(true, token, refToken, id)
+    fun saveSession(token: String) {
+        repository.setLogin(true, token)
     }
 
     fun login(loginRequest: LoginRequest): LiveData<Boolean> {
@@ -25,11 +25,11 @@ class LoginActivityViewModel(private val repository: SettingsRepository) : ViewM
         client.enqueue(object : Callback<LoginResponse> {
             override fun onResponse(call: Call<LoginResponse>, response: Response<LoginResponse>) {
                 if (response.isSuccessful) {
-                    val responseBody = response.body()?.data
+                    val responseBody = response.body()
                     if (responseBody != null) {
-//                        Log.d("message", responseBody.accessToken)
+                        Log.d("message", responseBody.token)
 //                        showToast(response.)
-                        saveSession(responseBody.accessToken, responseBody.refreshToken, responseBody.id)
+                        saveSession(responseBody.token)
                         loginLiveData.value = true
                         return
                     }

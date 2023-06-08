@@ -18,7 +18,7 @@ class ProfileViewModel(private val repository: SettingsRepository) : ViewModel()
 
     fun getSettings() {
         val settings = repository.getSettings()
-        setUserDetail(settings.userID)
+        setUserDetail(settings.token)
     }
 
     private fun setUserDetail(username: String) {

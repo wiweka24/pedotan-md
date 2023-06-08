@@ -4,8 +4,11 @@ import android.content.Context
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.ViewModelProvider
 import com.capstone.pedotan.di.Injection
+import com.capstone.pedotan.ui.contract.ContractViewModel
 import com.capstone.pedotan.ui.dashboard.DashboardViewModel
+import com.capstone.pedotan.ui.loan.LoanViewModel
 import com.capstone.pedotan.ui.login.LoginActivityViewModel
+import com.capstone.pedotan.ui.market.MarketViewModel
 import com.capstone.pedotan.ui.profile.ProfileViewModel
 import com.capstone.pedotan.ui.register.RegisterActivityViewModel
 import com.capstone.pedotan.ui.setting.SettingViewModel
@@ -25,6 +28,15 @@ class ViewModelFactory(private val context: Context) :
         }
         else if (modelClass.isAssignableFrom(DashboardViewModel::class.java)) {
             return DashboardViewModel(Injection.provideRepository(context)) as T
+        }
+        else if (modelClass.isAssignableFrom(LoanViewModel::class.java)) {
+            return LoanViewModel(Injection.provideRepository(context)) as T
+        }
+        else if (modelClass.isAssignableFrom(ContractViewModel::class.java)) {
+            return ContractViewModel(Injection.provideRepository(context)) as T
+        }
+        else if (modelClass.isAssignableFrom(MarketViewModel::class.java)) {
+            return MarketViewModel(Injection.provideRepository(context)) as T
         }
         else if (modelClass.isAssignableFrom(RegisterActivityViewModel::class.java)) {
             return RegisterActivityViewModel(Injection.provideRepository(context)) as T

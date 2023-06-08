@@ -3,26 +3,23 @@ package com.capstone.pedotan.ui
 import android.content.Intent
 import android.os.Bundle
 import android.view.Menu
-import com.google.android.material.bottomnavigation.BottomNavigationView
 import androidx.appcompat.app.AppCompatActivity
 import androidx.appcompat.widget.Toolbar
-import androidx.core.content.ContextCompat.startActivity
-import androidx.drawerlayout.widget.DrawerLayout
 import androidx.lifecycle.ViewModelProvider
 import androidx.navigation.findNavController
 import androidx.navigation.ui.AppBarConfiguration
-import androidx.navigation.ui.navigateUp
 import androidx.navigation.ui.setupActionBarWithNavController
 import androidx.navigation.ui.setupWithNavController
-import com.capstone.pedotan.R
 import com.capstone.pedotan.databinding.ActivityMainBinding
-import com.capstone.pedotan.ui.camera.CameraActivity
 import com.capstone.pedotan.ui.login.LoginActivity
-import com.google.android.material.navigation.NavigationView
-import com.google.android.material.snackbar.Snackbar
+import com.capstone.pedotan.R
+import com.capstone.pedotan.ui.profile.ProfileActivity
+import com.capstone.pedotan.ui.setting.SettingActivity
+import com.google.android.material.bottomnavigation.BottomNavigationView
 import com.google.firebase.auth.FirebaseAuth
 import com.google.firebase.auth.ktx.auth
 import com.google.firebase.ktx.Firebase
+
 
 class MainActivity : AppCompatActivity() {
 
@@ -40,17 +37,39 @@ class MainActivity : AppCompatActivity() {
         val navController = findNavController(R.id.nav_host_fragment_activity_main)
 
         appBarConfiguration = AppBarConfiguration.Builder(
-            R.id.navigation_dashboard, R.id.navigation_profile, R.id.navigation_history, R.id.navigation_setting
+            R.id.navigation_dashboard, R.id.navigation_profile, R.id.navigation_market, R.id.navigation_setting
         ).build()
 
-        setSupportActionBar(binding.toolbar);
-        val toolbar: Toolbar = binding.toolbar
+        setSupportActionBar(binding.myToolbar);
+        val toolbar: Toolbar = binding.myToolbar
+        toolbar.showOverflowMenu();
         toolbar.setTitleTextAppearance(this, R.style.ToolbarTitleTextAppearance_Bold)
 
         setupActionBarWithNavController(navController, appBarConfiguration)
         navView.setupWithNavController(navController)
 
+        binding.myToolbar.setOnMenuItemClickListener { menuItem ->
+            when (menuItem.itemId) {
+                R.id.navigation_setting -> {
+                    val intent = Intent(this, SettingActivity::class.java)
+                    startActivity(intent)
+                    true
+                }
+                R.id.navigation_profile -> {
+                    val intent = Intent(this, ProfileActivity::class.java)
+                    startActivity(intent)
+                    true
+                }
+                else -> false
+            }
+        }
+
         setupViewModel()
+    }
+
+    override fun onCreateOptionsMenu(menu: Menu?): Boolean {
+        menuInflater.inflate(R.menu.option_menu, menu)
+        return true
     }
 
     private fun setupViewModel() {
