@@ -4,15 +4,22 @@
     <group android:menuCategory="container">
 
         <item
+            android:id="@+id/navigation_shop"
+            android:icon="@drawable/ic_baseline_shopping_cart_24"
+            android:title="@string/title_shop"
+            app:showAsAction="ifRoom"/>
+
+        <item
             android:id="@+id/navigation_profile"
             android:icon="@drawable/anim_account"
             android:title="@string/title_profile"
-            app:showAsAction="ifRoom" />
+            app:showAsAction="never" />
 
         <item
             android:id="@+id/navigation_setting"
             android:icon="@drawable/anim_settings"
             android:title="@string/title_setting"
-            app:showAsAction="ifRoom"/>
+            app:showAsAction="never"/>
+
     </group>
 </menu>

@@ -12,7 +12,8 @@
         android:layout_height="wrap_content"
         android:layout_marginTop="20dp"
         android:orientation="horizontal"
-        android:padding="16dp"
+        android:gravity="center"
+        android:layout_margin="16dp"
         app:layout_constraintTop_toTopOf="parent">
 
         <ImageView
@@ -27,47 +28,43 @@
             android:layout_height="wrap_content"
             android:layout_marginStart="16dp"
             android:text="@string/title_shop"
+            android:textStyle="bold"
             android:textColor="@color/green_300"
-            android:textSize="20sp" />
+            android:textSize="32sp" />
     </LinearLayout>
 
     <TextView
         android:id="@+id/tv_name"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:layout_marginHorizontal="16dp"
+        android:layout_marginTop="16dp"
         android:text="@string/placeholder_name"
-        android:textSize="20sp"
-        android:layout_marginStart="15dp"
-        android:layout_marginTop="10dp"
-        android:layout_marginEnd="8dp"
         android:textColor="@color/black"
-        app:layout_constraintTop_toBottomOf="@+id/linearLayout"
-        app:layout_constraintStart_toStartOf="parent"
+        android:textSize="20sp"
         app:layout_constraintEnd_toEndOf="parent"
-        />
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/linearLayout" />
 
     <TextView
         android:id="@+id/tv_address"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="@string/placeholder_address"
-        android:textSize="14sp"
-        android:layout_marginStart="15dp"
+        android:layout_marginHorizontal="16dp"
         android:layout_marginTop="10dp"
-        android:layout_marginEnd="8dp"
+        android:text="@string/placeholder_address"
         android:textColor="@color/black"
-        app:layout_constraintTop_toBottomOf="@+id/tv_name"
-        app:layout_constraintStart_toStartOf="parent"
+        android:textSize="14sp"
         app:layout_constraintEnd_toEndOf="parent"
-        />
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/tv_name" />
 
     <androidx.cardview.widget.CardView
         android:id="@+id/cardView"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:layout_marginHorizontal="12dp"
         android:layout_marginTop="20dp"
-        android:layout_marginLeft="10dp"
-        android:layout_marginRight="10dp"
         app:cardElevation="5dp"
         app:layout_constraintTop_toBottomOf="@+id/tv_address">
 
@@ -108,8 +105,8 @@
                 android:id="@+id/tv_price"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_marginTop="0dp"
                 android:layout_marginStart="15dp"
+                android:layout_marginTop="0dp"
                 android:paddingBottom="12dp"
                 android:text="@string/placeholder_price_cart"
                 android:textColor="@color/black"
@@ -125,8 +122,9 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginTop="20dp"
+        android:gravity="center"
         android:orientation="horizontal"
-        android:padding="16dp"
+        android:layout_margin="16dp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/cardView">
@@ -138,58 +136,68 @@
             android:textColor="@color/black"
             android:textSize="18sp" />
 
-        <ImageView
-            android:layout_width="30dp"
-            android:layout_height="30dp"
-            android:layout_marginStart="145dp"
-            android:onClick="decrement"
-            android:src="@drawable/ic_minus" />
-
-        <TextView
-            android:id="@+id/tv_quantity"
-            android:layout_width="wrap_content"
+        <LinearLayout
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_marginStart="10dp"
-            android:text="@string/placeholder_quantity"
-            android:textColor="@color/black"
-            android:textSize="20sp" />
+            android:gravity="end|center"
+            android:orientation="horizontal"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/cardView">
 
-        <ImageView
-            android:layout_width="30dp"
-            android:layout_height="30dp"
-            android:layout_marginStart="10dp"
-            android:onClick="increment"
-            android:src="@drawable/ic_plus" />
+            <ImageView
+                android:layout_width="30dp"
+                android:layout_height="30dp"
+                android:onClick="decrement"
+                android:src="@drawable/ic_minus" />
+
+            <TextView
+                android:id="@+id/tv_quantity"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="10dp"
+                android:text="@string/placeholder_quantity"
+                android:textColor="@color/black"
+                android:textSize="20sp" />
+
+            <ImageView
+                android:layout_width="30dp"
+                android:layout_height="30dp"
+                android:layout_marginStart="10dp"
+                android:onClick="increment"
+                android:src="@drawable/ic_plus" />
+
+        </LinearLayout>
     </LinearLayout>
 
     <LinearLayout
         android:id="@+id/linearLayout3"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginTop="220dp"
+        android:layout_marginBottom="16dp"
         android:orientation="horizontal"
-        android:padding="16dp"
+        android:layout_margin="16dp"
+        app:layout_constraintBottom_toTopOf="@+id/btn_add_to_cart"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/linearLayout2">
+        app:layout_constraintStart_toStartOf="parent">
 
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="@string/title_total_price"
             android:textColor="@color/black"
-            android:textStyle="bold"
-            android:textSize="18sp" />
+            android:textSize="18sp"
+            android:textStyle="bold" />
 
         <TextView
             android:id="@+id/tv_total_price"
-            android:layout_width="wrap_content"
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_marginStart="180dp"
+            android:gravity="end"
             android:text="@string/placeholder_total_price"
             android:textColor="@color/black"
-            android:textStyle="bold"
-            android:textSize="18sp" />
+            android:textSize="18sp"
+            android:textStyle="bold" />
 
     </LinearLayout>
 
@@ -197,15 +205,13 @@
         android:id="@+id/btn_add_to_cart"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginTop="20dp"
-        android:layout_marginStart="15dp"
-        android:layout_marginEnd="15dp"
+        android:layout_marginBottom="32dp"
+        android:layout_marginHorizontal="16dp"
         android:backgroundTint="@color/green_100"
         android:text="@string/btn_add_to_cart"
         android:textColor="@color/black"
         android:textSize="18sp"
-        app:layout_constraintTop_toBottomOf="@+id/linearLayout3"/>
-
+        app:layout_constraintBottom_toBottomOf="parent" />
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>

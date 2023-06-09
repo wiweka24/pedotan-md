@@ -13,6 +13,7 @@ import androidx.navigation.ui.setupWithNavController
 import com.capstone.pedotan.databinding.ActivityMainBinding
 import com.capstone.pedotan.ui.login.LoginActivity
 import com.capstone.pedotan.R
+import com.capstone.pedotan.ui.market.ShopActivity
 import com.capstone.pedotan.ui.profile.ProfileActivity
 import com.capstone.pedotan.ui.setting.SettingActivity
 import com.google.android.material.bottomnavigation.BottomNavigationView
@@ -63,15 +64,20 @@ class MainActivity : AppCompatActivity() {
         auth = Firebase.auth
         val firebaseUser = auth.currentUser
 
-//        if (firebaseUser == null && !settings.isLogin) {
-//            startActivity(Intent(this, LoginActivity::class.java))
-//            finish()
-//        }
+        if (firebaseUser == null && !settings.isLogin) {
+            startActivity(Intent(this, LoginActivity::class.java))
+            finish()
+        }
     }
 
     private fun setupAction() {
         binding.myToolbar.setOnMenuItemClickListener { menuItem ->
             when (menuItem.itemId) {
+                R.id.navigation_shop -> {
+                    val intent = Intent(this, ShopActivity::class.java)
+                    startActivity(intent)
+                    true
+                }
                 R.id.navigation_setting -> {
                     val intent = Intent(this, SettingActivity::class.java)
                     startActivity(intent)

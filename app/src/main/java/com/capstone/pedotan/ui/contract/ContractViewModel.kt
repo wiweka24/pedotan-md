@@ -8,6 +8,7 @@ import android.net.Uri
 import android.util.Log
 import android.view.LayoutInflater
 import android.view.ViewGroup
+import android.widget.Toast
 import androidx.core.content.ContextCompat.startActivity
 import androidx.lifecycle.ViewModel
 import androidx.recyclerview.widget.RecyclerView
@@ -46,12 +47,12 @@ class ListContractAdapter(private val context: Context): RecyclerView.Adapter<Li
                 tvLoan.text = "Rp ${contract.loan}"
 
                 Glide.with(context)
-                    .load("https://picsum.photos/512")
+                    .load("https://media.licdn.com/dms/image/C5603AQGVjhHMUawVyA/profile-displayphoto-shrink_200_200/0/1647696620497?e=1691625600&v=beta&t=kEDr6RDxOHWk960a16U3p3QyW7rSye8o4uj41GadcSo")
                     .transition(DrawableTransitionOptions.withCrossFade())
                     .into(ivProfile)
 
                 binding.rightArrow.setOnClickListener {
-                    openWhatsApp("6285155187033")
+                    openWhatsApp("6281228352023")
                 }
             }
         }
@@ -76,7 +77,7 @@ class ListContractAdapter(private val context: Context): RecyclerView.Adapter<Li
             context.startActivity(intent)
         } else {
             // WhatsApp not installed show toast or dialog
-            Log.e("err", "wa g ada")
+            showToast("install aplikasi whatsapp terlebih dahulu")
         }
     }
 
@@ -88,6 +89,11 @@ class ListContractAdapter(private val context: Context): RecyclerView.Adapter<Li
         } catch (e: PackageManager.NameNotFoundException) {
             false
         }
+    }
+
+    fun showToast(message: String) {
+        val toast: Toast = Toast.makeText(context, message, Toast.LENGTH_SHORT)
+        toast.show()
     }
 }
 
