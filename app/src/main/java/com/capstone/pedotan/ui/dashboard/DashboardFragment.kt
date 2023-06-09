@@ -8,8 +8,10 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.activity.OnBackPressedCallback
+import androidx.recyclerview.widget.LinearLayoutManager
 import com.capstone.pedotan.databinding.FragmentDashboardBinding
 import com.capstone.pedotan.ui.ViewModelFactory
+import com.capstone.pedotan.ui.addfield.AddFieldActivity
 import com.capstone.pedotan.ui.camera.CameraActivity
 import com.capstone.pedotan.ui.livecamera.LiveCameraActivity
 
@@ -18,6 +20,7 @@ class DashboardFragment : Fragment() {
     private lateinit var viewModel: DashboardViewModel
     private var _binding: FragmentDashboardBinding? = null
     private val binding get() = _binding!!
+    private val adapter: ListMarketAdapter by lazy { ListMarketAdapter(requireActivity()) }
 
     override fun onCreateView(
         inflater: LayoutInflater,
@@ -46,13 +49,21 @@ class DashboardFragment : Fragment() {
     }
 
     private fun setupAction() {
-        binding.btnQuickScan.setOnClickListener {
-            startActivity(Intent(requireActivity(), LiveCameraActivity::class.java))
+        binding.apply {
+            btnQuickScan.setOnClickListener {
+                startActivity(Intent(requireActivity(), LiveCameraActivity::class.java))
+            }
+
+            rvField.layoutManager = LinearLayoutManager(requireActivity())
+            rvField.setHasFixedSize(true)
+            rvField.adapter = adapter
+
+            btnAddField.setOnClickListener {
+                startActivity(Intent(requireActivity(), AddFieldActivity::class.java))
+            }
         }
 
-        binding.btnCamera.setOnClickListener {
-            startActivity(Intent(requireActivity(), CameraActivity::class.java))
-        }
+        adapter.setList(viewModel.listFields)
     }
 
     private fun onBackPressed() {

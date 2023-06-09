@@ -2,10 +2,16 @@ package com.capstone.pedotan.data
 
 import android.content.Context
 import android.provider.Telephony.Carriers.PASSWORD
+import com.capstone.pedotan.model.Field
+import com.capstone.pedotan.model.FieldData
 import com.senpro.ulamsae.model.Settings
 
 class SettingsRepository(context: Context)  {
     private val preferences = context.getSharedPreferences(PREFS_NAME, Context.MODE_PRIVATE)
+
+    fun getFields(): List<Field> {
+        return FieldData.fields
+    }
 
     fun setDarkMode(value: Int) {
         val editor = preferences.edit()

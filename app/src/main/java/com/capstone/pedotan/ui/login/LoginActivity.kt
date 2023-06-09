@@ -37,8 +37,6 @@ class LoginActivity : AppCompatActivity() {
         binding = ActivityLoginBinding.inflate(layoutInflater)
         setContentView(binding.root)
 
-        // (binding.loginImage.drawable as? Animatable)?.start()
-
         // Configure Google Sign In
         val gso = GoogleSignInOptions
             .Builder(GoogleSignInOptions.DEFAULT_SIGN_IN)
@@ -72,7 +70,6 @@ class LoginActivity : AppCompatActivity() {
                 // Google Sign In was successful, authenticate with Firebase
                 val account = task.getResult(ApiException::class.java)!!
                 Log.d(TAG, "firebaseAuthWithGoogleid:" + account.givenName)
-                viewModel.saveSession(account.idToken!!)
                 firebaseAuthWithGoogle(account.idToken!!)
             } catch (e: ApiException) {
                 // Google Sign In failed, update UI appropriately
@@ -89,19 +86,12 @@ class LoginActivity : AppCompatActivity() {
                     // Sign in success, update UI with the signed-in user's information
                     Log.d(TAG, "signInWithCredential:success")
                     val user = auth.currentUser
-                    updateUI(user)
+                    login(user?.email!!, "")
                 } else {
                     // If sign in fails, display a message to the user.
                     Log.w(TAG, "signInWithCredential:failure", task.exception)
-                    updateUI(null)
                 }
             }
-    }
-    private fun updateUI(currentUser: FirebaseUser?) {
-        if (currentUser != null){
-            startActivity(Intent(this@LoginActivity, MainActivity::class.java))
-            finish()
-        }
     }
 
     private fun setupViewModel() {
@@ -120,22 +110,7 @@ class LoginActivity : AppCompatActivity() {
                     binding.passwordEditTextLayout.error = "Masukkan password"
                 }
                 else -> {
-                    val newLogin = LoginRequest(username, password)
-                    val loginLiveData = viewModel.login(newLogin)
-                    loginLiveData.observe(this) { success ->
-                        if (success) {
-//                            showLoading(false)
-                            val intent = Intent(this, MainActivity::class.java)
-                            intent.flags =
-                                Intent.FLAG_ACTIVITY_CLEAR_TASK or Intent.FLAG_ACTIVITY_NEW_TASK
-                            startActivity(intent)
-                            finish()
-                        } else {
-//                            showLoading(false)
-                            val toast: Toast = Toast.makeText(this, "Login Gagal", Toast.LENGTH_SHORT)
-                            toast.show()
-                        }
-                    }
+                    login(username, password)
                 }
             }
         }
@@ -149,6 +124,24 @@ class LoginActivity : AppCompatActivity() {
         }
     }
 
+    private fun login(username: String, password: String) {
+        val newLogin = LoginRequest(username, password)
+        val loginLiveData = viewModel.login(newLogin)
+        loginLiveData.observe(this) { success ->
+            if (success) {
+//                            showLoading(false)
+                val intent = Intent(this, MainActivity::class.java)
+                intent.flags =
+                    Intent.FLAG_ACTIVITY_CLEAR_TASK or Intent.FLAG_ACTIVITY_NEW_TASK
+                startActivity(intent)
+                finish()
+            } else {
+//                            showLoading(false)
+                val toast: Toast = Toast.makeText(this, "Login Gagal", Toast.LENGTH_SHORT)
+                toast.show()
+            }
+        }
+    }
     companion object {
         private const val TAG = "LoginActivity"
     }

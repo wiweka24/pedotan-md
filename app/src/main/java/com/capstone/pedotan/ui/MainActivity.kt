@@ -48,6 +48,29 @@ class MainActivity : AppCompatActivity() {
         setupActionBarWithNavController(navController, appBarConfiguration)
         navView.setupWithNavController(navController)
 
+        setupViewModel()
+        setupAction()
+    }
+
+    override fun onCreateOptionsMenu(menu: Menu?): Boolean {
+        menuInflater.inflate(R.menu.option_menu, menu)
+        return true
+    }
+
+    private fun setupViewModel() {
+        viewModel = ViewModelProvider(this, ViewModelFactory(this))[MainActivityViewModel::class.java]
+        val settings = viewModel.getCurrentSettings()
+
+        auth = Firebase.auth
+        val firebaseUser = auth.currentUser
+
+        if (firebaseUser == null && !settings.isLogin) {
+            startActivity(Intent(this, LoginActivity::class.java))
+            finish()
+        }
+    }
+
+    private fun setupAction() {
         binding.myToolbar.setOnMenuItemClickListener { menuItem ->
             when (menuItem.itemId) {
                 R.id.navigation_setting -> {
@@ -62,32 +85,6 @@ class MainActivity : AppCompatActivity() {
                 }
                 else -> false
             }
-        }
-
-        setupViewModel()
-    }
-
-    override fun onCreateOptionsMenu(menu: Menu?): Boolean {
-        menuInflater.inflate(R.menu.option_menu, menu)
-        return true
-    }
-
-    private fun setupViewModel() {
-        viewModel = ViewModelProvider(this, ViewModelFactory(this))[MainActivityViewModel::class.java]
-        val settings = viewModel.getCurrentSettings()
-
-        if (!settings.isLogin) {
-            startActivity(Intent(this, LoginActivity::class.java))
-            finish()
-        }
-
-        auth = Firebase.auth
-        val firebaseUser = auth.currentUser
-        if (firebaseUser == null) {
-            // Not signed in, launch the Login activity
-            startActivity(Intent(this, LoginActivity::class.java))
-            finish()
-            return
         }
     }
 }
