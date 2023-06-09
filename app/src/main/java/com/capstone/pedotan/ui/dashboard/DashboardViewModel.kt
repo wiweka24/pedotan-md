@@ -18,13 +18,13 @@ class DashboardViewModel(private val repository: SettingsRepository) : ViewModel
         repository.getFields()
 }
 
-class ListMarketAdapter(private val context: Context) : RecyclerView.Adapter<ListMarketAdapter.ListViewHolder>() {
+class ListFieldAdapter(private val context: Context) : RecyclerView.Adapter<ListFieldAdapter.ListViewHolder>() {
     private val listField = mutableListOf<Field>()
 
-    fun setList(market: List<Field>) {
+    fun setList(field: List<Field>) {
         val oldSize = listField.size
         listField.clear()
-        listField.addAll(market)
+        listField.addAll(field)
         val newSize = listField.size
         notifyItemRangeRemoved(0, oldSize)
         notifyItemRangeInserted(0, newSize)
@@ -54,7 +54,7 @@ class ListMarketAdapter(private val context: Context) : RecyclerView.Adapter<Lis
                     context.startActivity(intent)
                 }
 
-                btnCekPenyakit.setOnClickListener {
+                btnCekKondisi.setOnClickListener {
                     val intent = Intent(context, CheckFieldActivity::class.java)
                     // Add any extra data to the intent if needed
                     intent.putExtra("key", listField[position].id)

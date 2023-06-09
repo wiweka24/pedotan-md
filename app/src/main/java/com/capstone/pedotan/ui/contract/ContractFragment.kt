@@ -7,17 +7,20 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.activity.OnBackPressedCallback
+import androidx.recyclerview.widget.LinearLayoutManager
 import com.capstone.pedotan.R
 import com.capstone.pedotan.databinding.FragmentContractBinding
 import com.capstone.pedotan.databinding.FragmentLoanBinding
 import com.capstone.pedotan.ui.ViewModelFactory
 import com.capstone.pedotan.ui.loan.LoanViewModel
+import com.capstone.pedotan.ui.market.ListMarketAdapter
 
 class ContractFragment : Fragment() {
 
     private lateinit var viewModel: ContractViewModel
     private var _binding: FragmentContractBinding? = null
     private val binding get() = _binding!!
+    private val adapter: ListContractAdapter by lazy { ListContractAdapter(requireActivity()) }
 
     override fun onCreateView(
         inflater: LayoutInflater,
@@ -46,7 +49,13 @@ class ContractFragment : Fragment() {
     }
 
     private fun setupAction() {
+        binding.apply {
+            rvContract.layoutManager = LinearLayoutManager(requireActivity())
+            rvContract.setHasFixedSize(true)
+            rvContract.adapter = adapter
+        }
 
+        adapter.setList(viewModel.listContract)
     }
 
     private fun onBackPressed() {

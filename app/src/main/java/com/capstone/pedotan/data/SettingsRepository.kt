@@ -1,9 +1,12 @@
 package com.capstone.pedotan.data
 
 import android.content.Context
-import android.provider.Telephony.Carriers.PASSWORD
+import com.capstone.pedotan.model.Contract
+import com.capstone.pedotan.model.ContractData
 import com.capstone.pedotan.model.Field
 import com.capstone.pedotan.model.FieldData
+import com.capstone.pedotan.model.Market
+import com.capstone.pedotan.model.MarketData
 import com.senpro.ulamsae.model.Settings
 
 class SettingsRepository(context: Context)  {
@@ -11,6 +14,14 @@ class SettingsRepository(context: Context)  {
 
     fun getFields(): List<Field> {
         return FieldData.fields
+    }
+
+    fun getMarkets(): List<Market> {
+        return MarketData.markets
+    }
+
+    fun getContracts(): List<Contract> {
+        return ContractData.contracts
     }
 
     fun setDarkMode(value: Int) {

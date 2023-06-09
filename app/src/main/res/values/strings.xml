@@ -91,7 +91,7 @@
     <string name="placeholder_company">PT. Sumber Agung Kencono</string>
     <string name="placeholder_due_date">Tanggal Terakhir Pelunasan: 31-DES-2023</string>
     <string name="title_active_loan">Pinjaman Aktif</string>
-    <string name="placeholder_range_loan">Jangkauan Pinjaman:\nRp50.0000.0000</string>
+    <string name="placeholder_range_loan">Rp50.0000.0000</string>
     <string name="title_find_investor">Temukan Investor!</string>
     <string name="title_find_best_price">Temukan Harga Terbaik!</string>
     <string name="have_not_complete_personal_data">Ups, Anda belum melengkapi data diri.\nSilahkan lengkapi data diri terlebih dahulu\nuntuk dapat menemukan investor.</string>
@@ -123,4 +123,5 @@
     <string name="placeholder_status_penyakit">Sehat</string>
     <string name="title_phosphorous">Phosphorous(P) :</string>
     <string name="title_history">Riwayat Kebun</string>
+    <string name="placeholder_loan">Jangkauan Pinjaman :</string>
 </resources>

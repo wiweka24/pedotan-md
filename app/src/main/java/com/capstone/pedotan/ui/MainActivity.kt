@@ -42,9 +42,7 @@ class MainActivity : AppCompatActivity() {
 
         setSupportActionBar(binding.myToolbar);
         val toolbar: Toolbar = binding.myToolbar
-        toolbar.showOverflowMenu();
         toolbar.setTitleTextAppearance(this, R.style.ToolbarTitleTextAppearance_Bold)
-//        supportActionBar?.setDisplayHomeAsUpEnabled(false);
 
         setupActionBarWithNavController(navController, appBarConfiguration)
         navView.setupWithNavController(navController)

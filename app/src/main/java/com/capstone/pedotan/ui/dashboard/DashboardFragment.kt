@@ -20,7 +20,7 @@ class DashboardFragment : Fragment() {
     private lateinit var viewModel: DashboardViewModel
     private var _binding: FragmentDashboardBinding? = null
     private val binding get() = _binding!!
-    private val adapter: ListMarketAdapter by lazy { ListMarketAdapter(requireActivity()) }
+    private val adapter: ListFieldAdapter by lazy { ListFieldAdapter(requireActivity()) }
 
     override fun onCreateView(
         inflater: LayoutInflater,
