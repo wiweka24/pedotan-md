@@ -44,6 +44,7 @@ class MainActivity : AppCompatActivity() {
         val toolbar: Toolbar = binding.myToolbar
         toolbar.showOverflowMenu();
         toolbar.setTitleTextAppearance(this, R.style.ToolbarTitleTextAppearance_Bold)
+//        supportActionBar?.setDisplayHomeAsUpEnabled(false);
 
         setupActionBarWithNavController(navController, appBarConfiguration)
         navView.setupWithNavController(navController)
@@ -64,10 +65,10 @@ class MainActivity : AppCompatActivity() {
         auth = Firebase.auth
         val firebaseUser = auth.currentUser
 
-        if (firebaseUser == null && !settings.isLogin) {
-            startActivity(Intent(this, LoginActivity::class.java))
-            finish()
-        }
+//        if (firebaseUser == null && !settings.isLogin) {
+//            startActivity(Intent(this, LoginActivity::class.java))
+//            finish()
+//        }
     }
 
     private fun setupAction() {

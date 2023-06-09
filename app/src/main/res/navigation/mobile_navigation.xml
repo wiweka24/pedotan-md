@@ -6,16 +6,16 @@
     app:startDestination="@+id/navigation_dashboard">
 
     <fragment
-        android:id="@+id/navigation_market"
-        android:name="com.capstone.pedotan.ui.market.MarketFragment"
-        android:label="@string/title_market"
-        tools:layout="@layout/fragment_market" />
-
-    <fragment
         android:id="@+id/navigation_dashboard"
         android:name="com.capstone.pedotan.ui.dashboard.DashboardFragment"
         android:label="@string/title_dashboard"
         tools:layout="@layout/fragment_dashboard" />
+
+    <fragment
+        android:id="@+id/navigation_market"
+        android:name="com.capstone.pedotan.ui.market.MarketFragment"
+        android:label="@string/title_market"
+        tools:layout="@layout/fragment_market" />
 
     <fragment
         android:id="@+id/navigation_contract"
