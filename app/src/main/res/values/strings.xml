@@ -128,5 +128,6 @@
     <string name="placeholder_total_price">Rp9.000</string>
     <string name="btn_add_to_cart">Beli</string>
     <string name="btn_whatsapp">WhatsApp</string>
+    <string name="title_due_date_loan">Tanggal Terakhir Pelunasan :</string>
 
 </resources>
