@@ -27,6 +27,9 @@
             android:name=".ui.addfield.AddFieldActivity"
             android:exported="false" />
         <activity
+            android:name=".ui.market.ShopActivity"
+            android:exported="false" />
+        <activity
             android:name=".ui.history.HistoryActivity"
             android:exported="false" />
         <activity
