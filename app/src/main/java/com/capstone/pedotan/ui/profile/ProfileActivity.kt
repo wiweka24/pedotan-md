@@ -1,5 +1,6 @@
 package com.capstone.pedotan.ui.profile
 
+import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import androidx.lifecycle.ViewModelProvider
@@ -10,6 +11,9 @@ import com.capstone.pedotan.databinding.ActivityProfileBinding
 import com.capstone.pedotan.databinding.ActivityRegisterBinding
 import com.capstone.pedotan.databinding.ActivitySettingBinding
 import com.capstone.pedotan.ui.ViewModelFactory
+import com.capstone.pedotan.ui.addfield.AddFieldActivity
+import com.capstone.pedotan.ui.setting.SettingActivity
+import com.capstone.pedotan.ui.updateprofile.UpdateProfileActivity
 
 class ProfileActivity : AppCompatActivity() {
 
@@ -34,13 +38,25 @@ class ProfileActivity : AppCompatActivity() {
 
         viewModel.user.observe(this) { user ->
             binding.apply {
-                tvUsername.text = user?.username
-                tvEmail.text = user?.fullname
-                Glide.with(profileImage)
-                    .load("https://picsum.photos/512")
+                tvUsername.text = user?.name
+                tvEmail.text = user?.email
+                tvHp.text = user?.noHandphone
+                tvNik.text = user?.nik
+                tvLocation.text = user?.location
+                Glide.with(this@ProfileActivity)
+                    .load(user?.photo)
                     .transition(DrawableTransitionOptions.withCrossFade())
                     .into(profileImage)
             }
+        }
+
+        binding.ivBack.setOnClickListener {
+            finish()
+        }
+
+        binding.updateButton.setOnClickListener {
+            startActivity(Intent(this, UpdateProfileActivity::class.java))
+            finish()
         }
     }
 }

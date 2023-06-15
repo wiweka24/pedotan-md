@@ -18,6 +18,6 @@ data class Settings(
 //    @field:SerializedName("refToken")
 //    var refToken: String = "0",
 //
-//    @field:SerializedName("userID")
-//    var userID: String = "id"
+    @field:SerializedName("email")
+    var email: String = "email"
 ) : Parcelable

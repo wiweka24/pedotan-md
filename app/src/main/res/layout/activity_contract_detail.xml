@@ -10,9 +10,10 @@
         android:id="@+id/linearLayout"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginTop="20dp"
+        android:layout_marginTop="12dp"
         android:orientation="horizontal"
         android:padding="16dp"
+        android:gravity="center"
         app:layout_constraintTop_toTopOf="parent">
 
         <ImageView
@@ -27,8 +28,8 @@
             android:layout_height="wrap_content"
             android:layout_marginStart="16dp"
             android:text="@string/title_detail_contract"
-            android:textColor="@color/green_300"
-            android:textSize="20sp" />
+            android:textStyle="bold"
+            android:textSize="24sp" />
     </LinearLayout>
 
     <androidx.constraintlayout.widget.ConstraintLayout

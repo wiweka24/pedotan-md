@@ -17,7 +17,6 @@ import com.bumptech.glide.load.resource.drawable.DrawableTransitionOptions
 import com.capstone.pedotan.data.SettingsRepository
 import com.capstone.pedotan.databinding.ItemFieldBinding
 import com.capstone.pedotan.databinding.ItemRowContractBinding
-import com.capstone.pedotan.model.Field
 import com.capstone.pedotan.model.Contract
 import com.capstone.pedotan.ui.camera.CameraActivity
 
@@ -47,7 +46,7 @@ class ListContractAdapter(private val context: Context): RecyclerView.Adapter<Li
                 tvLoan.text = "Rp ${contract.loan}"
 
                 Glide.with(context)
-                    .load("https://media.licdn.com/dms/image/C5603AQGVjhHMUawVyA/profile-displayphoto-shrink_200_200/0/1647696620497?e=1691625600&v=beta&t=kEDr6RDxOHWk960a16U3p3QyW7rSye8o4uj41GadcSo")
+                    .load(contract.imageUrl)
                     .transition(DrawableTransitionOptions.withCrossFade())
                     .into(ivProfile)
 

@@ -6,9 +6,7 @@
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
     android:layout_gravity="center"
-    android:layout_marginStart="10dp"
     android:layout_marginTop="4dp"
-    android:layout_marginEnd="10dp"
     android:layout_marginBottom="4dp"
     card_view:cardCornerRadius="4dp">
 
@@ -86,7 +84,7 @@
             android:layout_height="30dp"
             android:layout_marginTop="8dp"
             android:layout_marginEnd="8dp"
-            android:src="@drawable/ic_right_arrow"
+            android:src="@drawable/ic_whatsapp_logo_24"
             card_view:layout_constraintBottom_toBottomOf="parent"
             card_view:layout_constraintEnd_toEndOf="parent"
             card_view:layout_constraintTop_toTopOf="@+id/tv_investor_name" />

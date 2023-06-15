@@ -6,6 +6,7 @@ import kotlinx.parcelize.Parcelize
 @Parcelize
 data class History(
     val id: Int,
+    val fieldId: Int,
     val timestamp: String,
     val nitrogen: String,
     val phosphorous: String,
@@ -21,6 +22,7 @@ object HistoryData {
     val histories = listOf(
         History(
             1,
+            1,
             "2021-08-01 08:32:23",
             "Cukup",
             "Cukup",
@@ -33,6 +35,7 @@ object HistoryData {
         ),
         History(
             2,
+            1,
             "2021-08-02 09:42:22",
             "Cukup",
             "Kurang",
@@ -45,6 +48,7 @@ object HistoryData {
         ),
         History(
             3,
+            1,
             "2021-08-03 07:50:32",
             "Cukup",
             "Cukup",
@@ -57,6 +61,7 @@ object HistoryData {
         ),
         History(
             4,
+            1,
             "2021-08-04 09:10:32",
             "Cukup",
             "Cukup",
@@ -69,6 +74,7 @@ object HistoryData {
         ),
         History(
             5,
+            1,
             "2021-08-05 09:12:34",
             "Cukup",
             "Cukup",
@@ -81,6 +87,7 @@ object HistoryData {
         ),
         History(
             6,
+            1,
             "2021-08-06 10:31:51",
             "Kurang",
             "Cukup",
@@ -93,6 +100,7 @@ object HistoryData {
         ),
         History(
             7,
+            2,
             "2021-08-07 10:23:53",
             "Cukup",
             "Cukup",
@@ -105,6 +113,7 @@ object HistoryData {
         ),
         History(
             8,
+            2,
             "2021-08-08 08:30:40",
             "Cukup",
             "Cukup",
@@ -117,6 +126,7 @@ object HistoryData {
         ),
         History(
             9,
+            2,
             "2021-08-09 08:18:24",
             "Cukup",
             "Cukup",
@@ -129,6 +139,7 @@ object HistoryData {
         ),
         History(
             10,
+            2,
             "2021-08-10 09:20:33",
             "Cukup",
             "Kurang",

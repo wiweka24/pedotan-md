@@ -8,8 +8,10 @@ import androidx.activity.OnBackPressedCallback
 import androidx.appcompat.app.AppCompatActivity
 import androidx.fragment.app.Fragment
 import androidx.lifecycle.ViewModelProvider
+import androidx.recyclerview.widget.LinearLayoutManager
 import com.capstone.pedotan.databinding.FragmentLoanBinding
 import com.capstone.pedotan.ui.ViewModelFactory
+import com.capstone.pedotan.ui.contract.ListContractAdapter
 
 
 class LoanFragment : Fragment() {
@@ -17,6 +19,7 @@ class LoanFragment : Fragment() {
     private lateinit var viewModel: LoanViewModel
     private var _binding: FragmentLoanBinding? = null
     private val binding get() = _binding!!
+    private val adapter: ListLoanAdapter by lazy { ListLoanAdapter(requireActivity()) }
 
     override fun onCreateView(
         inflater: LayoutInflater,
@@ -46,7 +49,13 @@ class LoanFragment : Fragment() {
     }
 
     private fun setupAction() {
+        binding.apply {
+            rvLoan.layoutManager = LinearLayoutManager(requireActivity())
+            rvLoan.setHasFixedSize(true)
+            rvLoan.adapter = adapter
+        }
 
+        adapter.setList(viewModel.listLoan)
     }
 
     private fun onBackPressed() {
@@ -56,14 +65,4 @@ class LoanFragment : Fragment() {
             }
         })
     }
-
-//    override fun onResume() {
-//        super.onResume()
-//        (activity as AppCompatActivity?)!!.supportActionBar!!.setDisplayHomeAsUpEnabled(false)
-//    }
-//
-//    override fun onStop() {
-//        super.onStop()
-//        (activity as AppCompatActivity?)!!.supportActionBar!!.setDisplayHomeAsUpEnabled(true)
-//    }
 }

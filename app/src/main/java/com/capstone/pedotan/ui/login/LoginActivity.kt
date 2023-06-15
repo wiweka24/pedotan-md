@@ -13,6 +13,7 @@ import androidx.lifecycle.ViewModelProvider
 import com.capstone.pedotan.R
 import com.capstone.pedotan.databinding.ActivityLoginBinding
 import com.capstone.pedotan.model.request.LoginRequest
+import com.capstone.pedotan.model.request.RegisterRequest
 import com.capstone.pedotan.ui.MainActivity
 import com.capstone.pedotan.ui.ViewModelFactory
 import com.capstone.pedotan.ui.register.RegisterActivity
@@ -86,6 +87,9 @@ class LoginActivity : AppCompatActivity() {
                     // Sign in success, update UI with the signed-in user's information
                     Log.d(TAG, "signInWithCredential:success")
                     val user = auth.currentUser
+
+                    val newUser = RegisterRequest(user?.email!!, user?.displayName!!, "null")
+                    viewModel.register(newUser)
                     login(user?.email!!, "")
                 } else {
                     // If sign in fails, display a message to the user.

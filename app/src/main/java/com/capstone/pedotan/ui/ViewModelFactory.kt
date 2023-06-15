@@ -4,14 +4,20 @@ import android.content.Context
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.ViewModelProvider
 import com.capstone.pedotan.di.Injection
+import com.capstone.pedotan.model.request.AddFieldRequest
+import com.capstone.pedotan.ui.addfield.AddFieldActivityViewModel
+import com.capstone.pedotan.ui.camera.CameraActivityViewModel
+import com.capstone.pedotan.ui.checkfield.CheckFieldViewModel
 import com.capstone.pedotan.ui.contract.ContractViewModel
 import com.capstone.pedotan.ui.dashboard.DashboardViewModel
+import com.capstone.pedotan.ui.history.HistoryViewModel
 import com.capstone.pedotan.ui.loan.LoanViewModel
 import com.capstone.pedotan.ui.login.LoginActivityViewModel
 import com.capstone.pedotan.ui.market.MarketViewModel
 import com.capstone.pedotan.ui.profile.ProfileViewModel
 import com.capstone.pedotan.ui.register.RegisterActivityViewModel
 import com.capstone.pedotan.ui.setting.SettingViewModel
+import com.capstone.pedotan.ui.updateprofile.UpdateProfileViewModel
 
 class ViewModelFactory(private val context: Context) :
     ViewModelProvider.NewInstanceFactory() {
@@ -43,6 +49,21 @@ class ViewModelFactory(private val context: Context) :
         }
         else if (modelClass.isAssignableFrom(LoginActivityViewModel::class.java)) {
             return LoginActivityViewModel(Injection.provideRepository(context)) as T
+        }
+        else if (modelClass.isAssignableFrom(HistoryViewModel::class.java)) {
+            return HistoryViewModel(Injection.provideRepository(context)) as T
+        }
+        else if (modelClass.isAssignableFrom(UpdateProfileViewModel::class.java)) {
+            return UpdateProfileViewModel(Injection.provideRepository(context)) as T
+        }
+        else if (modelClass.isAssignableFrom(AddFieldActivityViewModel::class.java)) {
+            return AddFieldActivityViewModel(Injection.provideRepository(context)) as T
+        }
+        else if (modelClass.isAssignableFrom(CheckFieldViewModel::class.java)) {
+            return CheckFieldViewModel(Injection.provideRepository(context)) as T
+        }
+        else if (modelClass.isAssignableFrom(CameraActivityViewModel::class.java)) {
+            return CameraActivityViewModel(Injection.provideRepository(context)) as T
         }
         throw IllegalArgumentException("Unknown ViewModel class: " + modelClass.name)
     }

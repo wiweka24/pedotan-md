@@ -15,7 +15,6 @@ import androidx.recyclerview.widget.RecyclerView
 import com.capstone.pedotan.data.SettingsRepository
 import com.capstone.pedotan.databinding.ItemFieldBinding
 import com.capstone.pedotan.databinding.ItemRowMarketBinding
-import com.capstone.pedotan.model.Field
 import com.capstone.pedotan.model.Market
 import com.capstone.pedotan.ui.camera.CameraActivity
 
@@ -48,6 +47,10 @@ class ListMarketAdapter(private val context: Context): RecyclerView.Adapter<List
                 binding.rightArrow.setOnClickListener {
                     showToast("add to cart")
                 }
+            }
+
+            binding.rightArrow.setOnClickListener {
+                showToast("menambahkan ke keranjang")
             }
         }
     }

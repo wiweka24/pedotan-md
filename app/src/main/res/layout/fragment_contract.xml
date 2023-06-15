@@ -3,7 +3,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
-    android:padding="16dp"
+    android:paddingHorizontal="20dp"
     xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
     tools:context=".ui.market.MarketFragment">
@@ -13,8 +13,6 @@
         android:layout_height="wrap_content"
         android:text="@string/title_find_investor"
         android:textSize="20sp"
-        android:layout_marginHorizontal="8dp"
-        android:layout_marginTop="10dp"
         android:textColor="?attr/colorPrimaryVariant" />
 
     <androidx.recyclerview.widget.RecyclerView

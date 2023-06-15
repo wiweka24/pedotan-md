@@ -10,6 +10,7 @@ import com.capstone.pedotan.R
 import com.capstone.pedotan.databinding.ActivitySettingBinding
 import com.capstone.pedotan.ui.ViewModelFactory
 import com.capstone.pedotan.ui.login.LoginActivity
+import com.capstone.pedotan.ui.profile.ProfileActivity
 import com.google.firebase.auth.FirebaseAuth
 import com.google.firebase.auth.ktx.auth
 import com.google.firebase.ktx.Firebase
@@ -46,6 +47,11 @@ class SettingActivity : AppCompatActivity() {
             2 -> {
                 binding.tvTheme.text = "Default"
             }
+        }
+
+        binding.linearLayoutAccount.setOnClickListener {
+            val intent = Intent(this, ProfileActivity::class.java)
+            startActivity(intent)
         }
 
         binding.linearLayoutTheme.setOnClickListener {

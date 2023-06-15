@@ -72,4 +72,6 @@ dependencies {
     implementation("com.google.android.gms:play-services-tflite-support:16.1.0")
 
     implementation("com.google.android.gms:play-services-auth:20.5.0")
+
+    implementation("androidx.core:core-splashscreen:1.0.0")
 }

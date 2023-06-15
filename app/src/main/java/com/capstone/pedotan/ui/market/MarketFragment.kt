@@ -12,9 +12,6 @@ import androidx.activity.OnBackPressedCallback
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.capstone.pedotan.databinding.FragmentMarketBinding
 import com.capstone.pedotan.ui.ViewModelFactory
-import com.capstone.pedotan.ui.addfield.AddFieldActivity
-import com.capstone.pedotan.ui.dashboard.ListFieldAdapter
-import com.capstone.pedotan.ui.livecamera.LiveCameraActivity
 
 class MarketFragment : Fragment() {
 

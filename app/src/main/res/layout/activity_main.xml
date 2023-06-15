@@ -12,11 +12,9 @@
         android:id="@+id/nav_view"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
-        android:layout_marginHorizontal="12dp"
-        android:layout_marginBottom="4dp"
-        android:background="@drawable/background_roundedcorner"
+        android:background="?attr/colorSecondaryVariant"
         app:itemActiveIndicatorStyle="@style/App.Custom.Indicator"
-        app:labelVisibilityMode="labeled"
+        app:labelVisibilityMode="unlabeled"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
@@ -27,24 +25,31 @@
         android:name="androidx.navigation.fragment.NavHostFragment"
         android:layout_width="match_parent"
         android:layout_height="0dp"
-        android:layout_marginTop="48dp"
-        android:layout_marginBottom="8dp"
+        android:layout_marginTop="8dp"
         app:defaultNavHost="true"
         app:layout_constraintBottom_toTopOf="@id/nav_view"
         app:layout_constraintLeft_toLeftOf="parent"
         app:layout_constraintRight_toRightOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/my_toolbar"
         app:navGraph="@navigation/mobile_navigation" />
 
     <com.google.android.material.appbar.MaterialToolbar
         android:id="@+id/my_toolbar"
-        android:backgroundTint="?attr/colorSecondaryVariant"
-        android:background="@drawable/background_bottom_roundedcorner_settings"
+        android:backgroundTint="?attr/colorOnPrimary"
         android:layout_width="match_parent"
-        app:menu="@menu/option_menu"
         android:layout_height="?attr/actionBarSize"
+        app:menu="@menu/option_menu"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
+
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="2dp"
+        android:layout_marginTop="-2dp"
+        android:alpha="0.1"
+        android:background="?attr/colorPrimary"
+        app:layout_constraintTop_toBottomOf="@id/my_toolbar"/>
+
 
 </androidx.constraintlayout.widget.ConstraintLayout>

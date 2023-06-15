@@ -44,7 +44,7 @@
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/nitrogenTextView"
-            app:startIconDrawable="@drawable/ic_rice_24dp">
+            app:startIconDrawable="@drawable/ic_nitrogen_24">
 
             <androidx.appcompat.widget.AppCompatAutoCompleteTextView
                 android:id="@+id/nitrogenEditText"
@@ -56,7 +56,7 @@
         </com.google.android.material.textfield.TextInputLayout>
 
         <TextView
-            android:id="@+id/potasiumTextView"
+            android:id="@+id/phospatTextView"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginStart="32dp"
@@ -66,7 +66,7 @@
             app:layout_constraintTop_toBottomOf="@+id/nitrogenEditTextLayout" />
 
         <com.google.android.material.textfield.TextInputLayout
-            android:id="@+id/potasiumEditTextLayout"
+            android:id="@+id/phospatEditTextLayout"
             style="@style/Widget.Material3.TextInputLayout.OutlinedBox.ExposedDropdownMenu"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
@@ -74,11 +74,11 @@
             android:layout_marginEnd="32dp"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/potasiumTextView"
-            app:startIconDrawable="@drawable/ic_rice_24dp">
+            app:layout_constraintTop_toBottomOf="@+id/phospatTextView"
+            app:startIconDrawable="@drawable/ic_phosphorus_24">
 
             <androidx.appcompat.widget.AppCompatAutoCompleteTextView
-                android:id="@+id/potasiumEditText"
+                android:id="@+id/phospatEditText"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:ems="10"
@@ -94,7 +94,7 @@
             android:layout_marginTop="8dp"
             android:text="@string/kalium"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/potasiumEditTextLayout" />
+            app:layout_constraintTop_toBottomOf="@+id/phospatEditTextLayout" />
 
         <com.google.android.material.textfield.TextInputLayout
             android:id="@+id/kaliumEditTextLayout"
@@ -106,7 +106,7 @@
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/kaliumTextView"
-            app:startIconDrawable="@drawable/ic_rice_24dp">
+            app:startIconDrawable="@drawable/ic_kalium_24">
 
             <androidx.appcompat.widget.AppCompatAutoCompleteTextView
                 android:id="@+id/kaliumEditText"
@@ -137,7 +137,7 @@
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/rainTextView"
-            app:startIconDrawable="@drawable/ic_baseline_location_on_24">
+            app:startIconDrawable="@drawable/ic_rain_24">
 
             <com.google.android.material.textfield.TextInputEditText
                 android:id="@+id/rainEditText"
@@ -168,7 +168,7 @@
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/phTextView"
-            app:startIconDrawable="@drawable/ic_baseline_aspect_ratio_24">
+            app:startIconDrawable="@drawable/ic_ph_24">
 
             <com.google.android.material.textfield.TextInputEditText
                 android:id="@+id/phEditText"
@@ -199,7 +199,7 @@
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/humidityTextView"
-            app:startIconDrawable="@drawable/ic_baseline_aspect_ratio_24">
+            app:startIconDrawable="@drawable/ic_humidity_24">
 
             <com.google.android.material.textfield.TextInputEditText
                 android:id="@+id/humidityEditText"
@@ -230,7 +230,7 @@
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/temperatureTextView"
-            app:startIconDrawable="@drawable/ic_baseline_aspect_ratio_24">
+            app:startIconDrawable="@drawable/ic_thermometer_24">
 
             <com.google.android.material.textfield.TextInputEditText
                 android:id="@+id/temperatureEditText"
@@ -254,7 +254,7 @@
             app:layout_constraintTop_toBottomOf="@+id/temperatureEditTextLayout" />
 
         <Button
-            android:id="@+id/registerButton"
+            android:id="@+id/sendButton"
             android:layout_width="0dp"
             android:layout_height="48dp"
             android:layout_marginHorizontal="32dp"

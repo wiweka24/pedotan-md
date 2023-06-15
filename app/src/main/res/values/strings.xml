@@ -20,22 +20,22 @@
     <string name="login">Login</string>
     <string name="email">Email</string>
     <string name="password">Password</string>
-    <string name="profile">Profile</string>
+    <string name="profile">Data Diri</string>
     <string name="user_email">Email</string>
     <string name="register">Register</string>
     <string name="not_have_account">don\'t have an account?</string>
     <string name="have_an_account">already have an account?</string>
 
     <!--  Profile  -->
-    <string name="fullname">Username</string>
+    <string name="fullname">Nama Lengkap</string>
     <string name="user_name">John Doe</string>
 
     <!--  Camera  -->
-    <string name="camera">Take Picture</string>
+    <string name="camera">Ambil Gambar</string>
     <string name="gallery">Galeri</string>
-    <string name="upload">Scan</string>
+    <string name="upload">Scan Penyakit</string>
 
-    <!--  Live Camera  -->
+    <!--  Dashboard -->
     <string name="capture_button_alt">Capture</string>
     <string name="unknown">UNKNOWN</string>
     <string name="live_camera">Live Camera</string>
@@ -57,24 +57,29 @@
     <string name="field_name">Komoditas |</string>
     <string name="field_luas">Luas</string>
     <string name="field_location">lokasi</string>
-    <string name="add_field">+</string>
+    <string name="add_field">Tambah Kebun</string>
     <string name="or">-- atau --</string>
     <string name="title_add_field">Tambah Kebun</string>
+
+    <!--  Item Row Kebun  -->
     <string name="comodity">Komoditas</string>
     <string name="location">Lokasi</string>
     <string name="siza">Luas Kebun (ha)</string>
     <string name="btn_add_field">Tambah Kebun</string>
     <string name="cek_field_condition">Cek Kondisi Kebun</string>
     <string name="title_check_field">Cek Kondisi Kebun</string>
+
+    <!--  Check Field  -->
     <string name="nitrogen">Nitrogen (N)</string>
     <string name="potasium">Phosphat (P)</string>
     <string name="kalium">Kalium (K)</string>
     <string name="rain_falls">Curah Hujan</string>
     <string name="ph">pH</string>
-    <string name="humidity">Kelembapan</string>
-    <string name="temperature">Suhu</string>
+    <string name="humidity">Kelembapan (%)</string>
+    <string name="temperature">Suhu (°C)</string>
     <string name="btn_check_npk">Cek N,P,K Otomatis</string>
     <string name="btn_send">Kirim</string>
+
     <string name="unit">Rp/kg</string>
     <string name="placeholder_price">9000</string>
     <string name="placeholder_name">Petani Tajir</string>
@@ -110,7 +115,7 @@
     <string name="placeholder_ph">6</string>
     <string name="title_kelembaban">Kelembaban(%) :</string>
     <string name="placeholder_kelembaban">82</string>
-    <string name="title_suhu">Suhu(C) :</string>
+    <string name="title_suhu">Suhu (°C) :</string>
     <string name="placeholder_suhu">20</string>
     <string name="title_penyakit">Penyakit :</string>
     <string name="placeholder_status_penyakit">Sehat</string>
@@ -129,5 +134,10 @@
     <string name="btn_add_to_cart">Beli</string>
     <string name="btn_whatsapp">WhatsApp</string>
     <string name="title_due_date_loan">Tanggal Terakhir Pelunasan :</string>
+    <string name="update_profile">Perbarui Profil</string>
+    <string name="phone_number">Nomor Telepon</string>
+    <string name="nik">NIK</string>
+    <string name="perbarui">Perbarui</string>
+    <string name="start">Pelajari</string>
 
 </resources>

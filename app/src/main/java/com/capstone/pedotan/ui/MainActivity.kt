@@ -5,6 +5,7 @@ import android.os.Bundle
 import android.view.Menu
 import androidx.appcompat.app.AppCompatActivity
 import androidx.appcompat.widget.Toolbar
+import androidx.core.splashscreen.SplashScreen.Companion.installSplashScreen
 import androidx.lifecycle.ViewModelProvider
 import androidx.navigation.findNavController
 import androidx.navigation.ui.AppBarConfiguration
@@ -20,7 +21,6 @@ import com.google.android.material.bottomnavigation.BottomNavigationView
 import com.google.firebase.auth.FirebaseAuth
 import com.google.firebase.auth.ktx.auth
 import com.google.firebase.ktx.Firebase
-
 
 class MainActivity : AppCompatActivity() {
 
@@ -38,7 +38,7 @@ class MainActivity : AppCompatActivity() {
         val navController = findNavController(R.id.nav_host_fragment_activity_main)
 
         appBarConfiguration = AppBarConfiguration.Builder(
-            R.id.navigation_dashboard, R.id.navigation_profile, R.id.navigation_market, R.id.navigation_setting
+            R.id.navigation_dashboard, R.id.navigation_contract, R.id.navigation_market, R.id.navigation_loan
         ).build()
 
         setSupportActionBar(binding.myToolbar);
@@ -80,11 +80,6 @@ class MainActivity : AppCompatActivity() {
                 }
                 R.id.navigation_setting -> {
                     val intent = Intent(this, SettingActivity::class.java)
-                    startActivity(intent)
-                    true
-                }
-                R.id.navigation_profile -> {
-                    val intent = Intent(this, ProfileActivity::class.java)
                     startActivity(intent)
                     true
                 }

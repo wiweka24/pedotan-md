@@ -3,10 +3,13 @@
     xmlns:tools="http://schemas.android.com/tools">
 
     <uses-feature android:name="android.hardware.camera" />
+
     <uses-permission android:name="android.permission.INTERNET" />
     <uses-permission android:name="android.permission.CAMERA" />
 
-    <queries> <package android:name="com.whatsapp" /> </queries>
+    <queries>
+        <package android:name="com.whatsapp" />
+    </queries>
 
     <application
         android:name=".MyApp"
@@ -20,6 +23,9 @@
         android:theme="@style/Theme.Pedotan"
         android:usesCleartextTraffic="true"
         tools:targetApi="31">
+        <activity
+            android:name=".ui.updateprofile.UpdateProfileActivity"
+            android:exported="false" />
         <activity
             android:name=".ui.checkfield.CheckFieldActivity"
             android:exported="false" />
@@ -43,9 +49,6 @@
             android:exported="false" />
         <activity
             android:name=".ui.setting.SettingActivity"
-            android:exported="false" />
-        <activity
-            android:name=".ui.livecamera.LiveCameraActivity"
             android:exported="false" />
         <activity
             android:name=".ui.camera.CameraXActivity"

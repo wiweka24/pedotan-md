@@ -16,8 +16,7 @@ object MarketData {
     val markets = listOf(
         Market(
             1,
-            "Ganja",
-            100_000,
+            "Beras", 9_000,
             "Pak Budi",
             "Kabupaten Karanganyar"
         ),
