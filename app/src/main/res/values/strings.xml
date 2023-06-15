@@ -1,19 +1,14 @@
 <resources>
     <string name="app_name">Pedotan</string>
-    <string name="title_home">Home</string>
     <string name="title_dashboard">Beranda</string>
-    <string name="title_notifications">Notifications</string>
-    <string name="title_profile">Data Diri</string>
     <string name="title_market">Pasar</string>
     <string name="title_setting">Setting</string>
-    <string name="title_scan">Scan</string>
     <string name="change_theme">Dark Mode</string>
     <string name="setting_ui">UI</string>
     <string name="setting">Settings</string>
     <string name="account">Account</string>
     <string name="setting_account">Account</string>
     <string name="logout">Logout</string>
-    <string name="theme_status">status</string>
     <string name="theme_now">Theme</string>
 
     <!--  Login & Register  -->
@@ -32,21 +27,11 @@
 
     <!--  Camera  -->
     <string name="camera">Ambil Gambar</string>
-    <string name="gallery">Galeri</string>
     <string name="upload">Scan Penyakit</string>
 
     <!--  Dashboard -->
-    <string name="capture_button_alt">Capture</string>
-    <string name="unknown">UNKNOWN</string>
-    <string name="live_camera">Live Camera</string>
     <string name="dashboard">Hi, Someone</string>
-    <string name="scan">Quick Scan</string>
-    <string name="heal_your_crops">Heal your Crops</string>
 
-    <string name="menu_home">Home</string>
-    <string name="menu_gallery">Gallery</string>
-    <string name="menu_slideshow">Slideshow</string>
-    <string name="title_activity_home">HomeActivity</string>
     <string name="title_loan">Pinjaman</string>
     <string name="title_contract">Kontrak</string>
     <string name="my_field">Kebunku</string>
@@ -87,13 +72,10 @@
     <string name="placeholder_commodity">Beras</string>
     <string name="placeholder_loan_amount">Rp50.000.000</string>
     <string name="placeholder_company">PT. Sumber Agung Kencono</string>
-    <string name="placeholder_due_date">Tanggal Terakhir Pelunasan: 31-DES-2023</string>
     <string name="title_active_loan">Pinjaman Aktif</string>
     <string name="placeholder_range_loan">Rp50.0000.0000</string>
     <string name="title_find_investor">Temukan Investor!</string>
     <string name="title_find_best_price">Temukan Harga Terbaik!</string>
-    <string name="have_not_complete_personal_data">Ups, Anda belum melengkapi data diri.\nSilahkan lengkapi data diri terlebih dahulu\nuntuk dapat menemukan investor.</string>
-    <string name="button_update_personal_data">Lengkapi Data Diri</string>
     <string name="title_detail_loan">Rincian Pinjaman</string>
     <string name="title_loan_date">Tanggal Pinjaman</string>
     <string name="placeholder_loan_date">1-JUL-2023</string>
@@ -122,13 +104,11 @@
     <string name="title_phosphorous">Phosphorous(P) :</string>
     <string name="title_history">Riwayat Kebun</string>
     <string name="placeholder_loan">Jangkauan Pinjaman :</string>
-    <string name="placeholder_address">Kecamatan Coblong, Dago, Kota Bandung</string>
     <string name="placeholder_stock">Stock : 100 kg</string>
     <string name="placeholder_price_cart">Harga : Rp9.000/kg</string>
     <string name="title_shop">Keranjang</string>
     <string name="title_quantity">Jumlah Pesanan :</string>
     <string name="placeholder_quantity">1</string>
-    <string name="title_total">TOTAL HARGA</string>
     <string name="title_total_price">TOTAL HARGA :</string>
     <string name="placeholder_total_price">Rp9.000</string>
     <string name="btn_add_to_cart">Beli</string>
@@ -138,6 +118,5 @@
     <string name="phone_number">Nomor Telepon</string>
     <string name="nik">NIK</string>
     <string name="perbarui">Perbarui</string>
-    <string name="start">Pelajari</string>
 
 </resources>

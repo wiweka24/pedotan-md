@@ -67,11 +67,5 @@ dependencies {
     implementation("androidx.camera:camera-lifecycle:1.3.0-alpha07")
     implementation("androidx.camera:camera-view:1.3.0-alpha07")
 
-    implementation("com.google.android.gms:play-services-tflite-gpu:16.2.0")
-    implementation("com.google.android.gms:play-services-tflite-java:16.1.0")
-    implementation("com.google.android.gms:play-services-tflite-support:16.1.0")
-
     implementation("com.google.android.gms:play-services-auth:20.5.0")
-
-    implementation("androidx.core:core-splashscreen:1.0.0")
 }
