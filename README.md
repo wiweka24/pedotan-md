@@ -38,6 +38,8 @@ https://github.com/wiweka24/Pedotan-MD/assets/70740913/76e89fe6-12cd-4e77-ae79-5
   <img src="https://github.com/wiweka24/Pedotan-MD/assets/70740913/0de89cd2-00a2-45b1-96a7-c96dcc67602b" alt="Screenshot 3" width="180" />
   <img src="https://github.com/wiweka24/Pedotan-MD/assets/70740913/9fa7462c-767d-48f6-a717-88c23f164bb4" alt="Screenshot 4" width="180" />
   <img src="https://github.com/wiweka24/Pedotan-MD/assets/70740913/6e6b5376-2dce-4ba8-946f-3c1f62a18828" alt="Screenshot 5" width="180" />
+  <img src="https://github.com/wiweka24/Pedotan-MD/assets/70740913/86cac1d4-aeb5-4175-b65a-47415c2a6fdb" alt="Screenshot 6" width="180" />
+  <img src="https://github.com/wiweka24/Pedotan-MD/assets/70740913/432159d6-e3ec-43bf-b72f-f847a469193f" alt="Screenshot 7" width="180" />
 </div>
 
 ## Our Guardians
