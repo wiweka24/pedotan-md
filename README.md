@@ -41,10 +41,10 @@ https://github.com/wiweka24/Pedotan-MD/assets/70740913/76e89fe6-12cd-4e77-ae79-5
 </div>
 
 ## Our Guardians
-|            Member           | Student ID |        Path        |                    Role                    |                                                       Contacts                                                      |
-| :-------------------------: | :--------: | :----------------: | :----------------------------------------: | :-----------------------------------------------------------------------------------------------------------------: |
+| Member | Student ID | Path | Role | Contacts |
+| :-: | :-: | :-: | :-: | :-: |
 | Wiweka Yoga Sadewa| A169DSX1204 | Mobile Development | Android Mobile Developer | [wiweka24](https://github.com/wiweka24) |
-| Ammar Raihan | A017DSX1052  | Mobile Development |          Android Mobile Developer          |    -   |
+| Ammar Raihan | A017DSX1052 | Mobile Development | Android Mobile Developer | [ammarraihn](https://github.com/ammarraihn) |
 
 ## Prerequisites
 [Download](https://developer.android.com/codelabs/basic-android-kotlin-compose-install-android-studio#0) and install Android Studio electric ell version or higher.
