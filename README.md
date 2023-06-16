@@ -65,6 +65,9 @@ glide
 cameraX
 ```
 
+### 🎨 Figma
+See our design [here](https://www.figma.com/file/MZenO8yScCXEIofpTMkA2Y/Pedotan-Design-App?type=design&node-id=1%3A245&t=3d6fOPoFvP64lJGT-1)
+
 ## Getting Started
 ### 🚀 Fast Try our app
 #### Download our latest [test app](https://drive.google.com/file/d/15BtYAy3corFpR_gWnx7zhkKD5t1YOKwL/view?usp=sharing) <br/>
