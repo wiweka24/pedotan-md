@@ -24,7 +24,12 @@ this is [Pedotan](https://github.com/akbarsigit/Pedotan-MachineLearning) MD Repo
 </div>
 
 ## Preview
+### Video
+For better video watc [here](https://youtu.be/7jzPTPpsNyE) <br/>
 https://github.com/wiweka24/Pedotan-MD/assets/70740913/76e89fe6-12cd-4e77-ae79-5c3b7e1b139d
+
+### Screenshots
+
 
 ## Our Guardians
 |            Member           | Student ID |        Path        |                    Role                    |                                                       Contacts                                                      |
